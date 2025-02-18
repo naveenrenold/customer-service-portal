@@ -1,0 +1,39 @@
+body {
+  background-color: #0063b2;
+  color: #9cc3d5;
+}
+.flex {
+  display: flex;
+}
+.blue {
+  color: #0063b2;
+}
+.lightblue {
+  color: #9cc3d5;
+}
+.center {
+  justify-content: center;
+}
+.mp0 {
+  margin: 0px;
+  padding: 0px;
+}
+.font {
+  font-size: 36px;
+}
+hr {
+  color: #9cc3d5;
+  margin-bottom: 0px;
+}
+.width100 {
+  width: 100%;
+}
+.block {
+  display: block;
+}
+.flexcolumm {
+  flex-direction: column;
+}
+.textalign {
+  text-align: center;
+}

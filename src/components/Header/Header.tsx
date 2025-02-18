@@ -1,15 +1,22 @@
+import "./Header.css";
+
 function Header() {
+  const LogOut = () => {
+    sessionStorage.removeItem("employee");
+  };
   return (
     <>
-      <ul>
+      <ul className="flex">
         <li>
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
         </li>
         <li>
           <a href="/product">Product</a>
         </li>
         <li>
-          <a href="/login">Logout</a>
+          <a href="/" onClick={LogOut}>
+            Logout
+          </a>
         </li>
       </ul>
     </>

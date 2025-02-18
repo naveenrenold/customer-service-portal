@@ -1,34 +1,32 @@
 import Header from "../Header/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Login from "../Login/Login";
 import Product from "../Product/Product";
 import Home from "../Home/Home";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  let [isUserLoggedIn, UpdatedIsUserLoggedIn] = useState(false);
-  useEffect(() => {
-    window.addEventListener("storage", () => {
-      UpdatedIsUserLoggedIn(sessionStorage.getItem("employee") != null);
-    }),
-      [],
-      () => {
-        window.removeEventListener("storage", () => {});
-      };
-  });
+  let [isLoggedIn, UpdateIsLoggedIn] = useState(
+    sessionStorage.getItem("employee") != null
+  );
   return (
     <>
-      <p>Customer Service Portal</p>
-      <hr />
-      {isUserLoggedIn && <Header />}
+      <div className="flex center mp0">
+        <div className="font">Customer Service Portal</div>
+      </div>
       <BrowserRouter>
+        {isLoggedIn && <Header />}
         <Routes>
-          <Route path="/" element={<Login />}></Route>
+          <Route
+            path="/"
+            element={<Login UpdateIsLoggedIn={UpdateIsLoggedIn} />}
+          ></Route>
           <Route path="/product" element={<Product />}></Route>
           <Route path="/home" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
     </>
-  );
+  );  
 }
 export default App;

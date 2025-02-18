@@ -1,0 +1,26 @@
+[
+  {
+    "productName": "Shoe1",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe1.png"
+  },
+  {
+    "productName": "Shoe2",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe2.png"
+  },
+  {
+    "productName": "Shoe3",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe3.png"
+  },
+  {
+    "productName": "Shoe4",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe4.png"
+  },
+  {
+    "productName": "Shoe5",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe5.png"
+  },
+  {
+    "productName": "Shoe6",
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe6.png"
+  }
+]
