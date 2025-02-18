@@ -3,13 +3,24 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../Login/Login";
 import Product from "../Product/Product";
 import Home from "../Home/Home";
+import { useEffect, useState } from "react";
 
 function App() {
+  let [isUserLoggedIn, UpdatedIsUserLoggedIn] = useState(false);
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      UpdatedIsUserLoggedIn(sessionStorage.getItem("employee") != null);
+    }),
+      [],
+      () => {
+        window.removeEventListener("storage", () => {});
+      };
+  });
   return (
     <>
       <p>Customer Service Portal</p>
       <hr />
-      <Header />
+      {isUserLoggedIn && <Header />}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />}></Route>

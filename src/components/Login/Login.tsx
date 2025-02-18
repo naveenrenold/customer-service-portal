@@ -1,4 +1,11 @@
+import { Navigate, useNavigate } from "react-router-dom";
+
 function Login() {
+  const Login = () => {
+    Navigate("/home");
+    return true;
+  };
+  const Navigate = useNavigate();
   return (
     <>
       <label>
@@ -9,6 +16,9 @@ function Login() {
         Password:
         <input type="password"></input>
       </label>
+      <button onClick={Login} type="submit">
+        Login
+      </button>
     </>
   );
 }
