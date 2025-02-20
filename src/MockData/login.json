@@ -1,9 +1,9 @@
 [
-  { "username": "user1", "password": "Test@123" },
-  { "username": "user2", "password": "Test@456" },
-  { "username": "user3", "password": "Test@123" },
-  { "username": "user4", "password": "Test@123" },
-  { "username": "user5", "password": "Test@123" },
-  { "username": "user6", "password": "Test@123" },
-  { "username": "user7", "password": "Test@123" }
+  { "username": "user1", "password": "Test@123", "filter": "" },
+  { "username": "user2", "password": "Test@456", "filter": "size sort asc"},
+  { "username": "user3", "password": "Test@123","filter": "size sort desc"},
+  { "username": "user4", "password": "Test@123","filter": "material eq Canvas"},
+  { "username": "user5", "password": "Test@123","filter": "material eq Leather"},
+  { "username": "user6", "password": "Test@123","filter": "product gt 300"},
+  { "username": "user7", "password": "Test@123","filter": "product lt 500"}
 ]

@@ -1,26 +1,50 @@
 [
   {
+    "productId": "10000",
     "productName": "Shoe1",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe1.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe1.png",
+    "productPrice": 100,
+    "size": 7,
+    "material": "Leather"
   },
   {
+    "productId": "10001",
     "productName": "Shoe2",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe2.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe2.png",
+    "productPrice": 200,
+    "size": 8,
+    "material": "Canvas"
   },
   {
+    "productId": "10002",
     "productName": "Shoe3",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe3.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe3.png",
+    "productPrice": 300,
+    "size": 5,
+    "material": "Synthetic"
   },
   {
+    "productId": "10003",
     "productName": "Shoe4",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe4.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe4.png",
+    "productPrice": 400,
+    "size": 8,
+    "material": "Leather"
   },
   {
+    "productId": "10004",
     "productName": "Shoe5",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe5.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe5.png",
+    "productPrice": 500,
+    "size": 10,
+    "material": "Leather"
   },
   {
+    "productId": "10005",
     "productName": "Shoe6",
-    "imageUrl": ".\\src\\assets\\table-photos\\shoe6.png"
+    "imageUrl": ".\\src\\assets\\table-photos\\shoe6.png",
+    "productPrice": 600,
+    "size": 11,
+    "material": "Canvas"
   }
 ]

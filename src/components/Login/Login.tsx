@@ -6,22 +6,17 @@ import "./Login.css";
 function Login({
   UpdateIsLoggedIn,
 }: {
-  UpdateIsLoggedIn: (e: boolean) => any;
+  UpdateIsLoggedIn: (e: boolean) => void;
 }) {
   const Login = () => {
-    let currentUser: UserLogin = {
-      username: username,
-      password: password,
-    };
-    if (
-      validUsers.filter(
-        (a) =>
-          a.username == currentUser.username &&
-          a.password == currentUser.password
-      )
-    ) {
+    const currentUser : UserLogin[] = validUsers.filter(
+      (a) =>
+        a.username == username &&
+        a.password == password)
+    if (currentUser != null)
+     {
       UpdateIsLoggedIn(true);
-      sessionStorage.setItem("employee", currentUser.username);
+      sessionStorage.setItem("employee", JSON.stringify({username :currentUser[0].username, filter : currentUser[0].filter}));
       Navigate("/home");
       return true;
     }
@@ -30,8 +25,8 @@ function Login({
   };
   const validUsers: UserLogin[] = validLoginJson;
   const Navigate = useNavigate();
-  let [username, updateUsername] = useState("");
-  let [password, updatePassword] = useState("");
+  const [username, updateUsername] = useState("");
+  const [password, updatePassword] = useState("");
   return (
     <>
       <div className="flex center flexcolumm">
@@ -76,4 +71,5 @@ export default Login;
 interface UserLogin {
   username: string;
   password: string;
+  filter: string;
 }
