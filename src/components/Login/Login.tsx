@@ -9,14 +9,18 @@ function Login({
   UpdateIsLoggedIn: (e: boolean) => void;
 }) {
   const Login = () => {
-    const currentUser : UserLogin[] = validUsers.filter(
-      (a) =>
-        a.username == username &&
-        a.password == password)
-    if (currentUser != null)
-     {
+    const currentUser: UserLogin[] = validUsers.filter(
+      (a) => a.username == username && a.password == password
+    );
+    if (currentUser.length != 0) {
       UpdateIsLoggedIn(true);
-      sessionStorage.setItem("employee", JSON.stringify({username :currentUser[0].username, filter : currentUser[0].filter}));
+      sessionStorage.setItem(
+        "employee",
+        JSON.stringify({
+          username: currentUser[0].username,
+          filter: currentUser[0].filter,
+        })
+      );
       Navigate("/home");
       return true;
     }
@@ -29,7 +33,7 @@ function Login({
   const [password, updatePassword] = useState("");
   return (
     <>
-      <div className="flex center flexcolumm">
+      <div className="flex center flexcolumn">
         <div className="textalign padding">
           <label>
             UserName:

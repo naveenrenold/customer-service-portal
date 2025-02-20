@@ -3,8 +3,18 @@ import "./Home.css";
 
 function Home() {
   let productList: product[] = productJson;
-  const filter = sessionStorage.getItem('filter');
-  productList = productList.filter((e) =>);
+  const filterJson = sessionStorage.getItem("employee");
+  if (filterJson != null && filterJson != "") {
+    const filter = JSON.parse(filterJson)["filter"];
+    const [field, operation, value] = filter!.split(" ");
+    const filterValue: filterValues = {
+      field: field,
+      operation: operation,
+      value: value,
+    };
+    productList = processFilter(filterValue, productList);
+  }
+  //productList = productList.filter((e) =>);
   return (
     <>
       <div className="flex wrap center">
@@ -12,10 +22,12 @@ function Home() {
           const temp = "./product?" + e.productId;
           return (
             <div className="flex center">
-              <div className="flex flexcolumm center">
-                <div className="textalign">{e.productName}</div>
+              <div className="flex flexcolumn center padding">
+                <a className="textalign bolder" href={temp}>
+                  {e.productName}
+                </a>
                 <img
-                  className="img"
+                  className="img self-center"
                   alt="Image failed to load"
                   src={e.imageUrl}
                 ></img>
@@ -31,33 +43,28 @@ function Home() {
 export default Home;
 
 export interface product {
-  [key: string] :any; 
-  productId : string;
+  [key: string]: any;
+  productId: string;
   productName: string;
   imageUrl: string;
-  productPrice : number;
-  size : number;
-  material : string;
+  productPrice: number;
+  size: number;
+  material: string;
 }
 
-interface filterValues{
-  field : any
-  operation : string
-  value :string
+interface filterValues {
+  field: any;
+  operation: string;
+  value: string;
 }
-function processFilter(filter :filterValues, products :product[])
-{  
-  switch(filter.operation){
+function processFilter(filter: filterValues, products: product[]) {
+  switch (filter.operation) {
     case ">":
-      return products.filter((e) => e[filter.field] > filter.value)
-      break;
-      case "<":
-        return products.filter((e) => e[filter.field] < filter.value)
-        break;
-        case "=":
-      return products.filter((e) => e[filter.field] === filter.value)
-      break;
+      return products.filter((e) => e[filter.field] > filter.value);
+    case "<":
+      return products.filter((e) => e[filter.field] < filter.value);
+    case "=":
+      return products.filter((e) => e[filter.field] === filter.value);
+  }
+  return products;
 }
-}
-
-

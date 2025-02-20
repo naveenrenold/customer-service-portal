@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../Login/Login";
 import Product from "../Product/Product";
 import Home from "../Home/Home";
@@ -27,6 +27,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  );  
+  );
 }
 export default App;
