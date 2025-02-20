@@ -8,7 +8,7 @@ function Header() {
     <>
       <ul className="flex">
         <li>
-          <a className=".a" href="/home">
+          <a className="a" href="/home">
             Home
           </a>
         </li>
@@ -18,7 +18,7 @@ function Header() {
           </a>
         </li> */}
         <li>
-          <a className=".a" href="/" onClick={LogOut}>
+          <a className="a" href="/" onClick={LogOut}>
             Logout
           </a>
         </li>
