@@ -25,3 +25,7 @@ ul {
   margin-left: -40px;
   margin-top: 5px;
 }
+.disabled {
+  pointer-events: none;
+  color: grey;
+}
